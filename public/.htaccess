@@ -1,0 +1,12 @@
+RewriteEngine On
+
+Options -MultiViews
+#Options -Indexes
+
+RewriteBase /public/
+
+RewriteCond %{REQUEST_FILENANE} !-d
+RewriteCond %{REQUEST_FILENANE} !-f
+RewriteCond %{REQUEST_FILENANE} !-l
+
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
